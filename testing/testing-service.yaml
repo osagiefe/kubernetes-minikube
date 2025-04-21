@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "testing"
+spec:
+  selector:
+    app: "testing"
+  ports:
+    - protocol: "TCP"
+      port: 5007
+      targetPort: 5007
+  type: LoadBalancer
