@@ -26,6 +26,11 @@ k get events
 
 k describe svc nginx  -n test
 k get svc -n test 
+# Scaling up pods
+k scale --replicas=3 -f n <ginx2-deployment.yaml>
+
+# Get endpoint 
+k get endpoints nginx-service
 
 # # troubleshooting
 
@@ -45,4 +50,7 @@ k logs jenkins-6fb994cfc5-twnvn -n test
 
 # Error Type 2:
 If a buggy application is built and saved to Dockerhub and such image is deployed with kebernetes a resulting common error message type is "crashloopbackoff"
+
+## Error OOMKilled
+When there is memory leakage 
  =====================================================
