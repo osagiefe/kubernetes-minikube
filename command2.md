@@ -18,6 +18,7 @@ k apply -f service.yaml -n test
 
 # delete pods 
 k delete pod <podname>
+k delete pod nginx2 -n dev
 
 # check the pods created in that namespace
 k get pods -n test
