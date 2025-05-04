@@ -1,0 +1,21 @@
+Task:
+As a cloud engineer you deployed 
+a pod and the pod is stuck in "pending state".
+It means the pod has not been scheduled
+to run in the nodes
+
+# Solution:
+1. check for the nodes status
+Kubectle get nodes
+
+2. secondly inspect the pods
+Kubectl get pods
+Kubectl describe  pod <podnamne>
+
+3. check resources
+By checking the pods yaml file to check
+resources allocation
+
+4. Check events
+Kubectl get events
+

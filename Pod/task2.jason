@@ -1,0 +1,17 @@
+Task 1
+
+1. Create a single pod of image httpd:alpine3.20
+in namespace: application 
+(check if namespace exist or not)
+Pls the pod should be name web1 
+and the container should be name web-container
+
+2. Write  a shell script
+to output the status of the pod
+
+Hint:
+k -n application get pod web1  -o yaml
+k -n application get pod web1  -o jsonpath={.status}
+k -n application get pod web1  -o jsonpath={.status.phase}
+
+

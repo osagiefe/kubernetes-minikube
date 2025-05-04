@@ -1,0 +1,44 @@
+# As a newly employed cloud engr level 1.
+You have the following task:
+
+1.Using a single node  minikube cluster 
+any kubernetes cluster of your choice 
+
+* Create a pod named web-pod 
+with image: ngnix
+Namesapace: dev
+Expose the pod on port:80
+Make sure the pod is not running
+(meaning you a do a dry run) and output the yaml file
+on pod.yaml.
+
+2. Now cat the pod.yaml and create
+(apply the file using this pod.yaml file.
+
+3. Check the status of the pod,
+troubleshoot and correct the issues with the pod
+and reconfigure appropriately stating your
+troubleshooting processes at resolving the issues
+
+4. If and when the issues are resolved,
+you must exec into the pod to show what's 
+inside the pod but make sure the pod is running 
+Hint:
+alias k=kubectl
+export do="- - dry-run=client -o yaml"
+
+# Image Pull Errors
+$ k describe pod  web-pod -n dev
+$ k logs web-pod -n dev
+$ k get events 
+
+# Solution:
+Delete the resource
+$ k get pods -n dev
+No resources found in dev namespace.
+Edit the pod.yaml to correct the image name which
+was misspelled. Then, reissue the apply command:
+$ k apply -f pod.yaml
+Pod was successfully created. 
+# To Clean up:
+$ k delete -f pod.yaml -n dev

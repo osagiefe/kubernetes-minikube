@@ -5,7 +5,7 @@ imperative command to create the following:
 * Namespace: dev
 * Do not run the nginx server after provisioning
 * Output yaml file to output.yaml
-Solution: 
+# Solution: 
 export do="--dry-run=client -o yaml"
 k -n dev run nginx1 --image nginx $do >> output.yaml
 
