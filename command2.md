@@ -4,7 +4,7 @@ minikube start
 alias k=kubectl
 k get nodes
 k get pods 
-k get po
+k get pods
 k create ns test OR k create namespace test
 k apply -f deployment.yaml
 k apply -f service.yaml 
@@ -46,6 +46,9 @@ k logs jenkins-6fb994cfc5-twnvn -n test
 
  minikube service nginx -n test
 
+ # to expose the application
+ minikube service <service name>
+
 
  ## Error and Challenges
  Deploying an application can fail with "ImagepullBackoff
@@ -63,4 +66,6 @@ Solution:
 4. Use name space to segregate or distribute pods
 5. Scale application horizontally across multiple nodes to distribut  memory workload 
 
- =====================================================
+ ================================================
+ ## To decode encryption 
+ $ echo 'YWRtaW4=' | base64 --decode
